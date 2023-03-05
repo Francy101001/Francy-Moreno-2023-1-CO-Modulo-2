@@ -32,7 +32,10 @@ class Game:
 
     def update(self):
         user_input = pygame.key.get_pressed()
-        self.player.update(user_input)
+        if user_input[pygame.K_DOWN]:
+            self.player.duck()
+        else:
+            self.player.update(user_input)
         
 
 
