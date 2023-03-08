@@ -31,6 +31,7 @@ class Game:
                 self.show_menu()
         pygame.display.quit()
         pygame.quit()
+        
 
 
     def run(self):
@@ -43,7 +44,7 @@ class Game:
             self.events()
             self.update()
             self.draw()
-        pygame.quit()
+        
 
     def events(self):
         for event in pygame.event.get():
@@ -85,10 +86,11 @@ class Game:
         if self.death_count == 0:
             self.menu.draw(self.screen)
         else:
-            self.manu.update_message("new message")
-            self.draw(self.screen)
-
-
+            self.menu.update_message("GAME OVER")
+            self.menu.display_score(self.score, self.screen)
+            self.menu.display_highest_score(self.highest_score,self.screen)
+            self.menu.display_total_deaths(self.total_deaths, self.screen)
+            self.menu.draw(self.screen)
         self.screen.blit(ICON,(half_screen_width - 50, half_screen_height - 140))
 
         self.menu.update(self)
