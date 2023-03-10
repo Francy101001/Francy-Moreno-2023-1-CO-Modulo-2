@@ -3,7 +3,7 @@ import random
 
 from dino_runner.components.obstacles.cactus import Cactus
 from dino_runner.components.obstacles.bird import Bird
-from dino_runner.utils.constants import SMALL_CACTUS, SHIELD_TYPE
+from dino_runner.utils.constants import SMALL_CACTUS, SHIELD_TYPE, HAMMER_TYPE
 
 class ObstacleManager:
     def __init__(self):
@@ -32,13 +32,16 @@ class ObstacleManager:
             obstacle.update(game.game_speed, self.obstacles)
 
             if game.player.dino_rect.colliderect(obstacle.rect):
-                if game.player.type != SHIELD_TYPE:
-                    pygame.time.delay(1000)
+                if game.player.type not in [SHIELD_TYPE, HAMMER_TYPE]:
+                    pygame.time.delay(100)
                     game.death_count.update()
-                    game.playing = False
-                    break
+                    #game.playing = False
+                    #break
                 else:
                     self.obstacles.remove(obstacle)
+            # Verificar si el martillo está activo y colisiona con un obstáculo
+            #if game.hammer.is_active and obstacle.rect.colliderect(game.hammer.hammer_rect):
+                #self.obstacles.remove(obstacle)
 
     def draw(self, screen):
         for obstacle in self.obstacles:

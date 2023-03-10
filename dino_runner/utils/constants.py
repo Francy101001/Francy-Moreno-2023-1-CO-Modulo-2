@@ -11,9 +11,14 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 # Assets Constants
 ICON = pygame.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
 
+
 RUNNING = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+]
+RUNNING_HORSE = [
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/Caballo_runing1.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/Caballo_runing2.png")),
 ]
 
 RUNNING_SHIELD = [
@@ -27,6 +32,7 @@ RUNNING_HAMMER = [
 ]
 
 JUMPING = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJump.png"))
+JUMPING_HORSE = pygame.image.load(os.path.join(IMG_DIR, "Dino/Caballo_jumping.png"))
 JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png"))
 JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
 
@@ -64,6 +70,7 @@ BIRD = [
 CLOUD = pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
 HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
+ANTORCHA = pygame.image.load(os.path.join(IMG_DIR, "Dino/Antorcha.png"))
 
 BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
@@ -74,3 +81,8 @@ DEFAULT_TYPE = "default"
 FONT_STYLE = "freesansbold.ttf"
 
 SHIELD_TYPE = "shield"
+
+HAMMER_TYPE = 'hammer'
+
+HORSE_TYPE = "horse"
+
