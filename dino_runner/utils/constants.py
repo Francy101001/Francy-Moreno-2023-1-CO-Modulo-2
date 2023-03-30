@@ -1,5 +1,6 @@
 import pygame
 import os
+import pygame.mixer
 
 # Global Constants
 TITLE = "Chrome Dino Runner"
@@ -10,6 +11,9 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 # Assets Constants
 ICON = pygame.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
+# Music Constants
+MUSIC = os.path.join(IMG_DIR, "musica/musiquita.mp3")
+
 
 
 RUNNING = [

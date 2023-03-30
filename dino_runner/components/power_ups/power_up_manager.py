@@ -7,11 +7,11 @@ from dino_runner.components.power_ups.hammer import Hammer
 class PowerUpManager:
     def __init__(self):
         self.power_ups = []
-        self.when_appears = random.randint(200, 300)
+        self.when_appears = random.randint(100, 300)
         self.duration = random.randint(3, 5)
 
     def generate_power_up(self):
-        self.when_appears += random.randint(200, 300)
+        self.when_appears += random.randint(100, 300)
         power_up_type = random.choice([Shield.SHIELD_TYPE, Hammer.HAMMER_TYPE])
         if power_up_type == Shield.SHIELD_TYPE:
             power_up = Shield()

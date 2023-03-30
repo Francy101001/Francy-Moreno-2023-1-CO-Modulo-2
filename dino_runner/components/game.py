@@ -1,12 +1,17 @@
 import pygame
 
-from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, FONT_STYLE, DEFAULT_TYPE, HAMMER
+from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, FONT_STYLE, DEFAULT_TYPE, HAMMER, MUSIC
 from dino_runner.components.dinosaur import Dinosaur
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager
 from dino_runner.components.menu import Menu
 from dino_runner.components.counter import Counter
 from dino_runner.components.power_ups.power_up_manager import  PowerUpManager
 from dino_runner.components.power_ups.hammer import Hammer
+import pygame.mixer
+
+
+
+
 
 class Game:
     GAME_SPEED = 20
@@ -30,6 +35,8 @@ class Game:
         self.power_up_manager = PowerUpManager()
         self.hammer = Hammer()
         self.is_hammer_active = False
+        self.music = MUSIC
+        
         
         
         
@@ -45,6 +52,8 @@ class Game:
         self.reset_game()
         # Game loop: events - update - draw
         self.playing = True
+        pygame.mixer.music.load(MUSIC)
+        pygame.mixer.music.play(-1)
         while self.playing:
             self.events()
             self.update()

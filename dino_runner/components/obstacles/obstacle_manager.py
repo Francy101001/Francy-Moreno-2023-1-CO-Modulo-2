@@ -35,8 +35,8 @@ class ObstacleManager:
                 if game.player.type not in [SHIELD_TYPE, HAMMER_TYPE]:
                     pygame.time.delay(100)
                     game.death_count.update()
-                    #game.playing = False
-                    #break
+                    game.playing = False
+                    break
                 else:
                     self.obstacles.remove(obstacle)
             # Verificar si el martillo está activo y colisiona con un obstáculo

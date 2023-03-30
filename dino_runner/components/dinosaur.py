@@ -41,10 +41,10 @@ class Dinosaur(Sprite):
       self.duck() 
       
       
-      if self.is_dino_horse:
+      #if self.is_dino_horse:
         # actualizar posición del dinosaurio montado en el caballo
-        self.dino_rect.x = self.X_POS + 50
-        self.dino_rect.y = self.Y_POS - 50
+        #self.dino_rect.x = self.X_POS + 50
+        #self.dino_rect.y = self.Y_POS - 50
       
       self.power_time_up += 1
       if self.power_time_up >= 500:
@@ -72,8 +72,8 @@ class Dinosaur(Sprite):
   def run(self):
     self.image = RUN_IMG[self.type][self.step_index // 5]
     self.dino_rect = self.image.get_rect()
-    self.dino_rect.x = self.X_POS
-    self.dino_rect.y = self.Y_POS
+    self.dino_rect.x = self.X_POS + 30
+    self.dino_rect.y = self.Y_POS - 30
     self.step_index += 1
     
   def jump(self):
